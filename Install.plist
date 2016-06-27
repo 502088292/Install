@@ -19,11 +19,11 @@
 				<key>bundle-identifier</key>
 				<string>cn.iauto360.YMInstaller</string>
 				<key>bundle-version</key>
-				<string>1.0</string>
+				<string>2.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>http://app.ym/res/icon.png</string>
+				<string>亚美测试</string>
 			</dict>
 		</dict>
 	</array>
