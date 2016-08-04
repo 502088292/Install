@@ -11,15 +11,15 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://o9fe5deth.bkt.clouddn.com/BotsInstallb.ipa</string>
+					<string>https://raw.githubusercontent.com/502088292/PlistFile/master/iAuto360.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>cn.iauto360.YMInstaller</string>
+				<string>cn.iauto360</string>
 				<key>bundle-version</key>
-				<string>2.0</string>
+				<string>5.1</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
