@@ -17,13 +17,13 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>cn.iauto360</string>
+				<string>com.iauto360</string>
 				<key>bundle-version</key>
 				<string>5.1</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>亚美测试</string>
+				<string>车智汇</string>
 			</dict>
 		</dict>
 	</array>
