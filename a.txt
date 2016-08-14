@@ -1,0 +1,103 @@
+1. 给你个10位数，每个数字2-9之间。请用电话号码键盘把数字换成字母，然后输出所有可能的字母串。
+思路如下：
+首先这题目我们要找到数字2-9这数字所属字母ASCII码对应区段，大写字母A-Z：65-90，小写字母a-z：97-122。
+如果我们选大写字母，情况如下：
+如果2对应大写字母A,2要转化成A就要加63,9要转化成Z就要加81，所以大写字母数字可增加的区段是63到81。
+如果我们选小写字母，情况如下：
+如果2对应小学字母a,2要转化成a就要加95,9要转化成z就要加113，所以小写字母数字可增加的区段是95到113。
+思路上面已经在上面，接下来写代码，代码如下：
+
+    /**
+     * 判断数字是否合法
+     * @author leibing
+     * @createTime 2016/7/26
+     * @lastModify 2016/7/26
+     * @param numbers 10位数数字串(2-9)
+     * @return
+     */
+    public boolean isLegal(String numbers){
+        // numbers为null或等于空或长度不等于10 都是不合法数据
+        if (numbers == null || numbers.equals("") || numbers.length() != 10)
+            return false;
+        //把字符串转换为字符数组
+        char num[] = numbers.toCharArray();
+        int i;
+        for (i = 0; i < num.length; i++){
+            // 把字符串转换为字符，再调用Character.isDigit(char)方法判断是否是数字而且范围必须为2-9
+            if (!Character.isDigit(num[i]) || num[i] == '0' || num[i] == '1')
+                break;
+        }
+        if (i >= num.length)
+            return true;
+
+        return false;
+    }
+
+    /**
+     * 数字换成字母
+     * @author leibing
+     * @createTime 2016/7/26
+     * @lastModify 2016/7/26
+     * @param numbers 10位数数字串(2-9范围)
+     * @return
+     */
+    public void numberChangeLetter(String numbers){
+        if (!isLegal(numbers)){
+            Toast.makeText(this, "数据不合法，请检查！", Toast.LENGTH_LONG).show();
+            return;
+        }
+        // 输出字符串
+        String outputStr;
+        //把字符串转换为字符数组
+        char num[] = numbers.toCharArray();
+        // 大写字母串
+        for (int i= 63;i<=81;i++){
+            outputStr = "";
+            for (int j=0;j<num.length;j++){
+                char outputChar = (char) (num[j] + i);
+                outputStr = outputStr + outputChar;
+            }
+            System.out.println("大写字母串可能：" + outputStr);
+        }
+        // 小写字母串
+        for (int i= 95;i<=113;i++){
+            outputStr = "";
+            for (int j=0;j<num.length;j++){
+                char outputChar = (char) (num[j] + i);
+                outputStr = outputStr + outputChar;
+            }
+            System.out.println("小写字母串可能：" + outputStr);
+        }
+    }
+	
+2. 有个数组里有1亿个数，无序的放了1-1亿的数字。其中有一个数重复了两次，其他数出现了一次。找出这个数是多少？
+    int[] nums = {1, 2, 3, 4 ,5, 6, 7, 8, 9 ,10 ,11 ,12 ,12, 13 ,14,......};
+    findRepeatNumber(nums);
+	
+    /**
+     * 查找数字字符串中重复数字
+     * @author leibing
+     * @createTime 2016/7/26
+     * @lastModify 2016/7/26
+     * @param num 数组
+     * @return
+     */
+    public void findRepeatNumber(int num[]){
+        int i;
+        for (i = 0; i < num.length -1; i++){
+            for (int j = i+1; j < num.length; j++){
+                if (num[i] == num[j]){
+                    System.out.println("重复数是：" + num[i]);
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+	
+	
